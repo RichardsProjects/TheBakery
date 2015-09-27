@@ -32,7 +32,11 @@ public class Oven extends Object {
 	
 	@Override
 	public void render(Graphics2D backgroundG2D) {
-				
+		
+		if(xCoordinate == -1 && yCoordinate == -1) {
+			return;
+		}
+		
 		int TILE_HEIGHT = 64;
 		int TILE_WIDTH = 64;
 		int x = xCoordinate * TILE_WIDTH;

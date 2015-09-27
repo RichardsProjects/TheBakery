@@ -425,6 +425,7 @@ public class Camera {
 			case -2055004:  handleTileSelected(11, 11, 3);
 							break;
 			default: MapUtilities.resetMapData(mapData);
+			// TODO: Fix bug where after scrolling off the bottom of the tiles the bottom row is still selected
 		}
 	}
 	

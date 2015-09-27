@@ -38,7 +38,8 @@ public class GUI_GameSetup extends GameState {
 	public GUI_GameSetup(GamePanel gamePanel) {
 		root = gamePanel;
 		
-
+        // TODO: Implement tutorial option as a checkbox
+		
 		textboxValue = "";
 		
 		//Add main menu buttons but not enabled

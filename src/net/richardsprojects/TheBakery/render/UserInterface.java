@@ -82,7 +82,7 @@ public class UserInterface {
 		//Setup main display panel
 		if(displayPanel)
 		{ 
-			g2d.drawImage(uiPanel, 0, 286, null);
+			g2d.drawImage(uiPanel, 0, 436, null);
 	
 			//Draw Stats Panel	
 			if(selectedPanel.equals("STATS")) renderStatsPanel(g2d);
@@ -91,29 +91,29 @@ public class UserInterface {
 			//Draw Stats Panel Icon
 			if(selectedPanel.equals("STATS"))
 			{
-				g2d.drawImage(statsTabOpen, 176, 313, null);
+				g2d.drawImage(statsTabOpen, 176, 463, null);
 			}
 			else
 			{
-				g2d.drawImage(statsTabClosed, 176, 313, null);
+				g2d.drawImage(statsTabClosed, 176, 463, null);
 			}
 			//Draw Build Panel Icon
 			if(selectedPanel.equals("BUILD"))
 			{
-				g2d.drawImage(buildTabOpen, 213, 313, null);
+				g2d.drawImage(buildTabOpen, 213, 463, null);
 			}
 			else
 			{
-				g2d.drawImage(buildTabClosed, 213, 313, null);
+				g2d.drawImage(buildTabClosed, 213, 463, null);
 			}
 				
 			//Draw the Down arrow
-			g2d.drawImage(downArrow, 300, 430, null);
+			g2d.drawImage(downArrow, 300, 580, null);
 			}
 		else
 		{
 			//Draw Up Arrow - because panel is currently hidden				
-			g2d.drawImage(upArrow, 300, 430, null);
+			g2d.drawImage(upArrow, 300, 580, null);
 		}
 	}
 	
@@ -145,7 +145,7 @@ public class UserInterface {
 		//Check if the up/down arrow was clicked
 		if(MouseInput.mouseClicked)
 		{
-			if(MouseInput.x > 300 && MouseInput.y > 430 && MouseInput.x < 351)
+			if(MouseInput.x > 300 && MouseInput.y > 580 && MouseInput.x < 351)
 			{
 				if(displayPanel)
 				{
@@ -159,43 +159,43 @@ public class UserInterface {
 				MouseInput.mouseClicked = false;
 				return;
 			}
-			// TODO: Update these locations
-			if(MouseInput.x > 551 && MouseInput.y > 352 && MouseInput.x < 562 && MouseInput.y < 366)
+			if(MouseInput.x > 701 && MouseInput.y > 502 && MouseInput.x < 712 && MouseInput.y < 516)
 			{
 				//Pause Button Clicked
 				TheBakery.gameSpeed = 0;
 				MouseInput.mouseClicked = false;
 				return;
 			}
-			if(MouseInput.x > 570 && MouseInput.y > 352 && MouseInput.x < 578 && MouseInput.y < 366)
+			if(MouseInput.x > 717 && MouseInput.y > 502 && MouseInput.x < 728 && MouseInput.y < 516)
 			{
 				//Play Button Clicked
 				TheBakery.gameSpeed = 1;
 				MouseInput.mouseClicked = false;
 				return;
 			}
-			if(MouseInput.x > 588 && MouseInput.y > 352 && MouseInput.x < 606 && MouseInput.y < 366)
+			if(MouseInput.x > 738 && MouseInput.y > 502 && MouseInput.x < 756 && MouseInput.y < 516)
 			{
 				//Speed 1 Button Clicked
 				TheBakery.gameSpeed = 2;
 				MouseInput.mouseClicked = false;
 				return;
 			}
-			if(MouseInput.x > 613 && MouseInput.y > 352 && MouseInput.x < 635 && MouseInput.y < 366)
+			if(MouseInput.x > 763 && MouseInput.y > 502 && MouseInput.x < 785 && MouseInput.y < 516)
 			{
 				//Speed 2 Button Clicked
 				TheBakery.gameSpeed = 3;
 				MouseInput.mouseClicked = false;
 				return;
 			}
-			if(MouseInput.x > 176 && MouseInput.x < 212 && MouseInput.y > 313 && MouseInput.y < 344)
+			// TODO: These coordinates are currently incorrect for the stats and build panel
+			if(MouseInput.x > 176 && MouseInput.x < 262 && MouseInput.y > 463 && MouseInput.y < 494)
 			{
 				//Stats Tab Clicked
 				selectedPanel = "STATS";
 				MouseInput.mouseClicked = false;
 				return;
 			}
-			if(MouseInput.x > 213 && MouseInput.x < 249 && MouseInput.y > 313 && MouseInput.y < 344)
+			if(MouseInput.x > 213 && MouseInput.x < 249 && MouseInput.y > 463 && MouseInput.y < 494)
 			{
 				//Build Tab Clicked
 				selectedPanel = "BUILD";
@@ -305,26 +305,28 @@ public class UserInterface {
 		g2d.drawRect(704, yStart, 88, 18);
 	}
 	
+	// TODO: Center UI hide button
+	
 	private void renderStatsPanel(Graphics2D g2d)
 	{
 		g2d.setColor(Color.white);
-		g2d.drawString("Bakery Name: " + TheBakery.bakeryName, 174, 356);
-		g2d.drawString("Money Earned: $" + TheBakery.moneyEarned, 174, 370);
-		g2d.drawString("Expenses: $" + TheBakery.totalExpenses, 174, 388);
-		g2d.drawString("Salaries: $" + TheBakery.salaries, 190, 402);
-		g2d.drawString("Purchases: $" + TheBakery.purchases, 190, 416);
+		g2d.drawString("Bakery Name: " + TheBakery.bakeryName, 174, 506);
+		g2d.drawString("Money Earned: $" + TheBakery.moneyEarned, 174, 520);
+		g2d.drawString("Expenses: $" + TheBakery.totalExpenses, 174, 538);
+		g2d.drawString("Salaries: $" + TheBakery.salaries, 190, 552);
+		g2d.drawString("Purchases: $" + TheBakery.purchases, 190, 566);
 	}
 	
 	private void renderBuildPanel(Graphics2D g2d)
 	{
-		g2d.drawImage(buildMenuBackground, 172, 344, null);
+		g2d.drawImage(buildMenuBackground, 172, 494, null);
 		if(ovenButtonHover == false)
 		{
-			g2d.drawImage(ovenIcon, 180, 350, null);
+			g2d.drawImage(ovenIcon, 180, 500, null);
 		}
 		else
 		{
-			g2d.drawImage(ovenIconSelected, 180, 350, null);
+			g2d.drawImage(ovenIconSelected, 180, 500, null);
 		}
 	}
 

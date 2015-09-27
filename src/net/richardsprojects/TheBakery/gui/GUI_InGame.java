@@ -21,7 +21,8 @@ import net.richardsprojects.TheBakery.objects.Object;
 
 public class GUI_InGame extends GameState {
 
-	//TODO: Update the UI to 800x600
+	// TODO: Finish updating the UI to 800x600
+	// TODO: Make a alert box appear at game start that tells the objective and game difficulty.
 	
 	// This is our custom JPanel
 	private GamePanel root;
